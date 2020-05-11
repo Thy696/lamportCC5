@@ -1,6 +1,7 @@
 ## Base 
 [] Speed Control
-    [] Display the current speed 
-        [] Create an reducer
-    [] Update when click 'Increase' or 'Decrease'
+    [x] Display the current speed 
+        [x] Create an reducer
+    [] Update speed when click 'Increase' or 'Decrease'
+        [] Make increse and decrease buttons work
 

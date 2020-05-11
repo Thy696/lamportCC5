@@ -6,8 +6,14 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 
 // put your reducer here!
-
+const reducer = () => {
+    console.log('In reducer');
+}
 // use reducer in store
-const storeInstance = createStore(  );
+const storeInstance = createStore( reducer );
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+<Provider store={storeInstance}>
+    <App />
+</Provider>, 
+document.getElementById('root'));

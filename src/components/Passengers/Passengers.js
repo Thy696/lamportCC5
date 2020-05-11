@@ -16,8 +16,8 @@ class Passengers extends Component {
           //use handleChangeFor function which was passed from App.js to take data
           onChange={this.props.handleChangefor}
           onKeyPress={this.props.keyPressed}
-
         />
+
         <button onClick={this.props.addName}>Add Passenger</button>
 
         <ul>PASSENGER LIST: GOES HERE

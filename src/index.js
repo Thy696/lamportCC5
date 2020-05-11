@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 
 const reducerInitialState = {
     name: '',
-    listName : []
 };
 
 // put your reducer here!
@@ -18,7 +17,7 @@ const nameReducer = (state = reducerInitialState, action) => {
         console.log('in nameReducer adding:',action.payload )
         state = {
             ...state, 
-            listName: action.payload 
+            name: action.payload 
         }
     }
     return state;

@@ -4,6 +4,9 @@ import reduxLogo from './redux.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+
+
 // components
 import SpeedControl from '../SpeedControl/SpeedControl';
 import Passengers from '../Passengers/Passengers';
@@ -14,7 +17,7 @@ class App extends Component {
   //Create a state to store data name
   state = {
     name: '',
-    listOfName: [],
+    listOfName: ['ssdf','sdfsdf'],
   }
   //Create an handle change for name input field 
   handleChangeFor = (event) => {
@@ -23,16 +26,9 @@ class App extends Component {
       name: event.target.value
     })
   }
-  //function add new name 
  
 
-  // add new name by press Enter in keyboard
-  // keyPressed = (event) => {
-  //   if (event.key === "Enter") {
-  //     console.log(' keyPressed Worked!')
-  //     this.addName();
-  //   }
-  // }
+
 
 
   render() {
@@ -61,6 +57,7 @@ class App extends Component {
                 addName={this.addName}
                 keyPressed = {this.keyPressed}
                 name = {this.state.name}
+                listOfName = {this.state.listOfName}
               />}
             />
 
@@ -74,5 +71,5 @@ class App extends Component {
   }
 }
 
-
-export default App;
+const putReduxStateOnProps = (reduxState) => ({ reduxState });
+export default connect(putReduxStateOnProps)(App);

@@ -12,7 +12,13 @@ const reducerInitialState = {
 // put your reducer here!
 const nameReducer = (state = reducerInitialState, action) => {
     console.log('In reducer');
-   
+    if (action.type === "add") {
+        console.log('in nameReducer adding:', action.payload)
+        state = {
+            ...state, name: action.payload 
+        }
+
+    }
 }
 // use reducer in store
 const storeInstance = createStore(nameReducer);

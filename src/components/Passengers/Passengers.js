@@ -5,21 +5,7 @@ import React, { Component } from 'react';
 
 class Passengers extends Component {
 
-  addName = () => {
-    console.log('in addName');
-    this.props.dispatch({
-      type: 'add',
-      payload: this.props.name
-    })
-  }
 
-  // add new name by press Enter in keyboard
-  // keyPressed = (event) => {
-  //   if (event.key === "Enter") {
-  //     console.log(' keyPressed Worked!')
-  //     this.addName();
-  //   }
-  // }
 
   render() {
     return (
@@ -28,18 +14,21 @@ class Passengers extends Component {
 
         <input type="text" name="name" placeholder="Enter Name"
           //use handleChangeFor function which was passed from App.js to take data
-          onChange={this.props.handleChangeFor}
+          onChange={this.props.handleChangefor}
           onKeyPress={this.props.keyPressed}
 
         />
-        <button onClick={this.addName}>Add Passenger</button>
+        <button onClick={this.props.addName}>Add Passenger</button>
 
         <ul>PASSENGER LIST: GOES HERE
 
           <li>Thy</li>
-
+          {/* <li>{this.props.reduxState}</li> */}
         </ul>
-       <h1>{JSON.stringify(this.props.listOfName)}</h1> 
+
+        <h1>Redux State: {JSON.stringify(this.props.reduxState)}</h1> 
+        {/* <h1>{JSON.stringify(this.props.name)}</h1>  */}
+
       </div>
     )
   }

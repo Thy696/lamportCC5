@@ -7,18 +7,21 @@ import { Provider } from 'react-redux';
 
 
 const reducerInitialState = {
-    name: ''
+    name: '',
+    listName : []
 };
+
 // put your reducer here!
 const nameReducer = (state = reducerInitialState, action) => {
     console.log('In reducer');
     if (action.type === "add") {
-        console.log('in nameReducer adding:', action.payload)
+        console.log('in nameReducer adding:',action.payload )
         state = {
-            ...state, name: action.payload 
+            ...state, 
+            listName: action.payload 
         }
-
     }
+    return state;
 }
 // use reducer in store
 const storeInstance = createStore(nameReducer);

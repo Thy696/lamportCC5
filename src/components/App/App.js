@@ -17,10 +17,22 @@ class App extends Component {
   }
   //Create an handle change for name input field 
   handleChangeFor = (event) => {
-    console.log('In input field:',event.target.value)
+    console.log('In input field:', event.target.value)
     this.setState({
-      name : event.target.value
+      name: event.target.value
     })
+  }
+  //function add new name 
+  addName = () => {
+    console.log('in addName');
+  }
+  
+  // add new name by press Enter in keyboard
+  keyPressed = (event) => {
+    if (event.key === "Enter") {
+      console.log(' keyPressed Worked!')
+      this.addName();
+    }
   }
 
 
@@ -47,6 +59,8 @@ class App extends Component {
             <Route path="/passengers"
               render={(props) => <Passengers {...props}
                 handleChangeFor={this.handleChangeFor} // send function handleChangeFor to Passengers component
+                addName={this.addName}
+                keyPressed = {this.keyPressed}
               />}
             />
 

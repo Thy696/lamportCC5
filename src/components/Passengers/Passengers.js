@@ -12,6 +12,8 @@ class Passengers extends Component {
         <input type="text" name="name" placeholder="Enter Name"
         //use handleChangeFor function which was passed from App.js to take data
           onChange={this.props.handleChangeFor} 
+          onKeyPress={this.props.keyPressed}
+
         />
         <button>Add Passenger</button>
 

@@ -13,7 +13,8 @@ import Dashboard from '../Dashboard/Dashboard';
 class App extends Component {
   //Create a state to store data name
   state = {
-    name: ''
+    name: '',
+    listOfName: [],
   }
   //Create an handle change for name input field 
   handleChangeFor = (event) => {
@@ -23,17 +24,15 @@ class App extends Component {
     })
   }
   //function add new name 
-  addName = () => {
-    console.log('in addName');
-  }
-  
+ 
+
   // add new name by press Enter in keyboard
-  keyPressed = (event) => {
-    if (event.key === "Enter") {
-      console.log(' keyPressed Worked!')
-      this.addName();
-    }
-  }
+  // keyPressed = (event) => {
+  //   if (event.key === "Enter") {
+  //     console.log(' keyPressed Worked!')
+  //     this.addName();
+  //   }
+  // }
 
 
   render() {
@@ -61,6 +60,7 @@ class App extends Component {
                 handleChangeFor={this.handleChangeFor} // send function handleChangeFor to Passengers component
                 addName={this.addName}
                 keyPressed = {this.keyPressed}
+                name = {this.state.name}
               />}
             />
 
@@ -73,5 +73,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

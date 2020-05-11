@@ -4,6 +4,16 @@ import React, { Component } from 'react';
 // INPUT SHOULD COLLECT INFO, BUTTON SHOULD ADD THEM TO THE LIST
 
 class Passengers extends Component {
+
+  addName = () => {
+    console.log('in addName');
+    this.props.dispatch({
+      type: 'add',
+      payload: this.props.name
+  })
+  }
+
+
   render() {
     return (
       <div>
@@ -15,7 +25,7 @@ class Passengers extends Component {
           onKeyPress={this.props.keyPressed}
 
         />
-        <button>Add Passenger</button>
+        <button onClick = {this.addName}>Add Passenger</button>
 
         <ul>PASSENGER LIST: GOES HERE
 
